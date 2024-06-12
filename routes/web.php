@@ -4,11 +4,53 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\StrandController;
+use App\Http\Controllers\SectionController;
+
+
+Route::resource('strands', StrandController::class);
+Route::resource('sections', SectionController::class);
 
 
 
- // registration:
+Route::get('/subjects', [SubjectController::class, 'index'])->name('subjects.index');
+Route::post('/subjects/assign', [SubjectController::class, 'assignTeacher'])->name('subjects.assignTeacher');
 
+
+
+Route::get('/assign-role', [RoleController::class, 'create'])->name('assign_role.create');
+Route::get('/get-users', [RoleController::class, 'getUsers']);
+Route::post('/assign-role', [RoleController::class, 'store'])->name('assign_role.store');
+
+
+
+
+Route::resource('teachers', TeacherController::class);
+Route::resource('students', StudentController::class);
+ 
+
+Route::get('/', function () {
+    return view('SampleBootstrap');
+});
+Route::get('/stem', function () {
+    return view('stem');
+});
+Route::get('/abm', function () {
+    return view('abm');
+});
+Route::get('/gas', function () {
+    return view('gas');
+});
+Route::get('/humss', function () {
+    return view('humss');
+});
+Route::get('/tvl', function () {
+    return view('tvl');
+});
+
+// registration:
 
 
  Route::get('/login', [AuthController::class, 'index'])->name('login');

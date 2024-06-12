@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('content')
+
+
 <div class="container-div">
             <div class="menu">
                 <nav class="sidebar">
@@ -11,7 +13,7 @@
 
                     <ul class="nav-list">
                         <li class="list-item active">
-                            <a href="{{route('dashboard')}}">
+                        <a href="{{route('dashboard')}}">
                                 <i class='bx bx-grid-alt'></i>
                                 <span class="link-name">Dashboard</span>
                             </a>
@@ -41,7 +43,7 @@
                         </li>
 
                         <li class="list-item">
-                            <a href="#">
+                        <a href="{{ route('assign_role.create') }}" >
                                 <i class='bx bx-receipt'></i>
                                 <span class="link-name">Assign Role</span>
                             </a>
@@ -59,55 +61,55 @@
             </div>
             <div class="invi-div">
             </div>
-    <div class="st">
-        <h1 style="text-align: center;">Students List</h1>
-        <div>
-            <a class="btn btn-primary" href="{{route('students.create')}}" role="button">Create</a>
+<div class="container mt-5">
+    <h2>Assign Roles</h2>
+    <form action="{{ route('assign_role.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="user_type">User Type</label>
+            <select class="form-control" id="user_type" name="user_type" required>
+                <option value="">Select User Type</option>
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+            </select>
         </div>
-          <table class="table">
-            <thead>
-                <tr>
-                  <th scope="col">Student_id</th>
-                  <th scope="col">Name</th>
-                  <!-- <th scope="col">Age</th>
-                  <th scope="col">Birth_Date</th>
-                  <th scope="col">Phone</th> -->
-                  <th scope="col">Email</th>
-                  <!-- <th scope="col">Father</th>
-                  <th scope="col">Mother</th>
-                  <th scope="col">Father_Num</th> -->
-                  <th scope="col">Address</th>
-                  <!-- <th scope="col">CGPA</th> -->
-                   <th>Action</th>
-                </tr>
-              </thead>
-              @foreach($students as $student)
-                <tbody>  
-                    <tr>
-                      <td>{{$student->Student_id}}</td>
-                      <td>{{$student->Name}}</td>
-                      <!-- <td>{{$student->Age}}</td>
-                      <td>{{$student->Birth_Date}}</td>
-                      <td>{{$student->Phone}}</td> -->
-                      <td>{{$student->Email}}</td>
-                      <!-- <td>{{$student->Father}}</td>
-                      <td>{{$student->Mother}}</td>
-                      <td>{{$student->Father_Num}}</td> -->
-                      <td>{{$student->Address}}</td>
-                      <!-- <td>{{$student->CGPA}}</td> -->
-                      <td>
-                        <a href="{{route('students.edit',['student'=>$student])}}">Edit</a>
-                        <form method="POST" action="{{route('students.destroy',['student'=>$student])}}">
-                            @csrf
-                            @method('delete')
-                            <input type="submit" value="Delete">
-                          </form>
-                      </td>
-                    </tr>
-                </tbody>
-              @endforeach
-          </table>
-         
-    </div>
-   
+        <div class="form-group mt-3">
+            <label for="user_id">User</label>
+            <select class="form-control" id="user_id" name="user_id" required>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+        <div class="form-group mt-3">
+            <label for="role">Role</label>
+            <select class="form-control" id="role" name="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Assign Role</button>
+    </form>
+</div>
+
+<script>
+document.getElementById('user_type').addEventListener('change', function() {
+    var userType = this.value;
+    var userSelect = document.getElementById('user_id');
+
+    // Clear existing options
+    userSelect.innerHTML = '';
+
+    // Fetch the users based on the selected type
+    fetch(`/get-users?type=${userType}`)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(user => {
+                var option = document.createElement('option');
+                option.value = user.id;
+                option.text = user.name;
+                userSelect.add(option);
+            });
+        });
+});
+</script>
 @endsection

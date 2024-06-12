@@ -13,6 +13,7 @@ class TeacherController extends Controller
     public function create(){
         return view('teachers.create');
    }
+   
 
    public function store(Request $request){
          $data = $request->validate([

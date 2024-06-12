@@ -9,4 +9,9 @@ class Teacher extends Model
 {
     use HasFactory;
     protected $fillable =['Teacher_id','Name','Age','Birth_Date','Phone','Email','Gander','Department','Possession','Address','Salary'];
+   
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
 }
