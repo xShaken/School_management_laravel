@@ -77,18 +77,18 @@
             </div>
             <div class="invi-div">
             </div>
-
-  <div class="st">
-    <h1 style="text-align: center;">Create Strand</h1>
-    <form action="{{ route('strands.store') }}" method="POST" class="form">
+<div class="container">
+    <h1>Section: {{ $section->name }}</h1>
+    <a href="{{ route('sections.index') }}" class="btn btn-secondary">Back to List</a>
+    <a href="{{ route('sections.edit', $section->id) }}" class="btn btn-primary">Edit Section</a>
+    <form action="{{ route('sections.destroy', $section->id) }}" method="POST" style="display:inline-block;">
         @csrf
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" required>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Save</button>
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger">Delete Section</button>
     </form>
+    
+    <hr>
+    
+    <h2>Strand: {{ $section->strand_name }}</h2>
 </div>
 @endsection
-

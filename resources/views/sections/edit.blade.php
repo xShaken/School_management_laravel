@@ -78,17 +78,38 @@
             <div class="invi-div">
             </div>
 
-  <div class="st">
-    <h1 style="text-align: center;">Create Strand</h1>
-    <form action="{{ route('strands.store') }}" method="POST" class="form">
-        @csrf
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" required>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form>
-</div>
-@endsection
+    <h1>Edit Section</h1>
 
+    <form action="{{ route('sections.update', $section->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{ old('name', $section->name) }}" required>
+            @error('name')
+                <div>{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div>
+            <label for="strand_id">Strand:</label>
+            <select name="strand_id" id="strand_id" required>
+                @foreach($strands as $strand)
+                    <option value="{{ $strand->id }}" {{ $section->strand_id == $strand->id ? 'selected' : '' }}>
+                        {{ $strand->name }}
+                    </option>
+                @endforeach
+            </select>
+            @error('strand_id')
+                <div>{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div>
+            <button type="submit">Update Section</button>
+        </div>
+    </form>
+
+    <a href="{{ route('sections.index') }}">Back to Sections</a>
+@endsection

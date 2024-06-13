@@ -42,6 +42,21 @@
         </a>
     </li>
 
+    <li class="list-item">
+                        <a href="{{ route('strands.index') }}" >
+                                <i class='bx bx-receipt'></i>
+                                <span class="link-name">Strands</span>
+                            </a>
+                        </li>
+
+                        <li class="list-item">
+                        <a href="{{ route('sections.index') }}" >
+                                <i class='bx bx-receipt'></i>
+                                <span class="link-name">Sections</span>
+                            </a>
+                        </li>
+
+
 
                         <li class="list-item">
                         <a href="{{ route('assign_role.create') }}" >

@@ -1,7 +1,9 @@
 @extends('layout')
 
 @section('content')
-<div class="container-div">
+
+
+        <div class="container-div">
             <div class="menu">
                 <nav class="sidebar">
                     <div class="logo-menu">
@@ -11,7 +13,7 @@
 
                     <ul class="nav-list">
                         <li class="list-item active">
-                            <a href="{{route('dashboard')}}">
+                            <a href="">
                                 <i class='bx bx-grid-alt'></i>
                                 <span class="link-name">Dashboard</span>
                             </a>
@@ -34,14 +36,30 @@
                         </li>
 
                         <li class="list-item">
-                            <a href="">
-                                <i class='bx bx-food-menu'></i>
-                                <span class="link-name">Subjects</span>
+        <a href="{{ route('subjects.index') }}">
+            <i class='bx bx-certification'></i>
+            <span class="link-name">Subjects</span>
+        </a>
+    </li>
+
+    <li class="list-item">
+                        <a href="{{ route('strands.index') }}" >
+                                <i class='bx bx-receipt'></i>
+                                <span class="link-name">Strands</span>
                             </a>
                         </li>
 
                         <li class="list-item">
-                            <a href="#">
+                        <a href="{{ route('sections.index') }}" >
+                                <i class='bx bx-receipt'></i>
+                                <span class="link-name">Sections</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="list-item">
+                        <a href="{{ route('assign_role.create') }}" >
                                 <i class='bx bx-receipt'></i>
                                 <span class="link-name">Assign Role</span>
                             </a>

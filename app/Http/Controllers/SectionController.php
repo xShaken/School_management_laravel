@@ -57,3 +57,4 @@ class SectionController extends Controller
         return redirect()->route('sections.index');
     }
 }
+

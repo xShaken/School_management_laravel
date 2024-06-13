@@ -78,17 +78,24 @@
             <div class="invi-div">
             </div>
 
-  <div class="st">
-    <h1 style="text-align: center;">Create Strand</h1>
-    <form action="{{ route('strands.store') }}" method="POST" class="form">
-        @csrf
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" required>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form>
-</div>
-@endsection
+    <h1>Edit Strand</h1>
 
+    <form action="{{ route('strands.update', $strand->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{ old('name', $strand->name) }}" required>
+            @error('name')
+                <div>{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div>
+            <button type="submit">Update Strand</button>
+        </div>
+    </form>
+
+    <a href="{{ route('strands.index') }}">Back to Strands</a>
+@endsection

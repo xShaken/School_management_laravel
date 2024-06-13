@@ -281,6 +281,15 @@
           padding: 1rem;
            
         }
+        td{
+            
+         width: 40%;
+         
+        }
+        th{
+
+        width: 40%;
+        }
 
         .dashboard-content p {
             font-size: 1em;
@@ -295,6 +304,7 @@
             transform: translatex(-5px);
             z-index: 1;
         }
+
         
     </style>
 </head>
