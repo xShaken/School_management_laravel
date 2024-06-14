@@ -13,7 +13,7 @@
 
                     <ul class="nav-list">
                         <li class="list-item active">
-                            <a href="">
+                            <a href="{{ route('dashboard') }}">
                                 <i class='bx bx-grid-alt'></i>
                                 <span class="link-name">Dashboard</span>
                             </a>

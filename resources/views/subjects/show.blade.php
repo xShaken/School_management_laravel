@@ -77,39 +77,14 @@
             </div>
             <div class="invi-div">
             </div>
-
-    <h1>Edit Section</h1>
-
-    <form action="{{ route('sections.update', $section->id) }}" method="POST">
+<div class="container">
+    <h1>Subject: {{ $subject->name }}</h1>
+    <a href="{{ route('subjects.index') }}" class="btn btn-secondary">Back to List</a>
+    <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-primary">Edit Subject</a>
+    <form action="{{ route('subjects.destroy', $subject->id) }}" method="POST" style="display:inline-block;">
         @csrf
-        @method('PUT')
-
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" value="{{ old('name', $section->name) }}" required>
-            @error('name')
-                <div>{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div>
-            <label for="strand_id">Strand:</label>
-            <select name="strand_id" id="strand_id" required>
-                @foreach($strands as $strand)
-                    <option value="{{ $strand->id }}" {{ $section->strand_id == $strand->id ? 'selected' : '' }}>
-                        {{ $strand->name }}
-                    </option>
-                @endforeach
-            </select>
-            @error('strand_id')
-                <div>{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div>
-            <button type="submit">Update Section</button>
-        </div>
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger">Delete Subject</button>
     </form>
-
-    <a href="{{ route('sections.index') }}">Back to Sections</a>
+</div>
 @endsection

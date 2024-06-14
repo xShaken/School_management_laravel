@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Laravel - ItSolutionStuff.com</title>
+    <title>akasha sinior highschool</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style type="text/css">
@@ -22,6 +22,11 @@
         .my-form {
             padding-top: 1.5rem;
             padding-bottom: 1.5rem;
+        }
+
+        .st h1{
+            font-size: 2rem;
+            text-align:start !important;
         }
 
         .my-form .row {
@@ -90,7 +95,7 @@
         .header .acc div h6 {
             font-size: 12px;
             margin: 0;
-            color: #FBB040;
+            color: #ffffff;
         }
 
         .face {
@@ -105,7 +110,7 @@
             width: 80px;
             min-width: 80px;
             height: 100%;
-            background: transparent;
+            background: #071630;
             backdrop-filter: blur(40px);
             border-right: 2px solid rgba(0, 0, 0, 0.2);
             box-shadow: rgba(0, 0, 0, 0.30) 2.4px 2.4px 3.2px;
@@ -128,7 +133,7 @@
 
         .sidebar .logo-menu .logo {
             font-size: 25px;
-            color: #FBB040;
+            color: #ffffff;
             pointer-events: none;
             opacity: 0;
             transition: .3s;
@@ -146,7 +151,7 @@
             width: 40px;
             height: 40px;
             font-size: 22px;
-            color: #FBB040;
+            color: #ffffff;
             text-align: center;
             line-height: 40px;
             cursor: pointer;
@@ -174,7 +179,7 @@
             display: flex;
             align-items: center;
             font-size: 15px;
-            color: #FBB040;
+            color: #ffffff;
             font-weight: bold;
             text-decoration: none;
             border-radius: 6px;
@@ -206,17 +211,17 @@
         }
 
         div hr {
-            color: #FBB040;
-            background-color: #FBB040;
+            color: #000000;
+            background-color: #000000;
         }
 
         .menu nav ul div p {
             font-size: .75em;
-            color: #FBB040;
+            color: #000000;
         }
 
         .men-p {
-            display: flex;
+            display: none;
             justify-content: center;
             padding: 0;
         }
@@ -283,20 +288,18 @@
         }
         td{
             
-         width: 40%;
+         width: 50%;
          
         }
         th{
 
-        width: 40%;
+        width: 50%;
         }
 
         .dashboard-content p {
             font-size: 1em;
             font-weight: bold;
-            color: #FBB040;
-            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-            background-color: transparent;
+            color: #000000;
             height: 30px;
             padding: 0 10px;
             padding-top: 5px;

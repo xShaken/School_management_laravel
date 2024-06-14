@@ -25,10 +25,9 @@ Passion+One:wght@400;700;900&family=Rubik+Scribble&display=swap" rel="stylesheet
 
 <body>
   <header>
-   <div>
-    <a href="{{ asset('login') }}">Login</a>
-   </div>
-
+    <div style=" padding:5px 2rem;margin-top:3.5px;">
+      <a style="border: 1px solid orange; padding:5px 2rem; text-decoration:none; color: orange;" href="{{ asset('login') }}">Login</a>
+    </div>
   </header>
 
   <section class="header">
@@ -132,10 +131,8 @@ Passion+One:wght@400;700;900&family=Rubik+Scribble&display=swap" rel="stylesheet
 
         <div class="conts">
 
-          <h2>Vision, Mission, Values </h2>
+          <h1>Vision, Mission, Values </h1>
           <div class="accordion" id="accordionExample">
-
-
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -148,8 +145,6 @@ Passion+One:wght@400;700;900&family=Rubik+Scribble&display=swap" rel="stylesheet
                 </div>
               </div>
             </div>
-
-
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -162,8 +157,6 @@ Passion+One:wght@400;700;900&family=Rubik+Scribble&display=swap" rel="stylesheet
                 </div>
               </div>
             </div>
-
-
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -176,16 +169,9 @@ Passion+One:wght@400;700;900&family=Rubik+Scribble&display=swap" rel="stylesheet
                 </div>
               </div>
             </div>
-
-
-
           </div>
-
-
         </div>
       </div>
-
-
     </div>
     </div>
   </section>

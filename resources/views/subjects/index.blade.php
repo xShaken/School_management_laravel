@@ -65,56 +65,45 @@
         </nav>
     </div>
     <div class="invi-div"></div>
-    <div class="container mt-5">
-        <h2>Assign Roles</h2>
-        <form action="{{ route('assign_role.store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="user_type">User Type</label>
-                <select class="form-control" id="user_type" name="user_type" required>
-                    <option value="">Select User Type</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="student">Student</option>
-                </select>
+
+    <div class="st">
+        <h1 style="text-align: center;">Subjects List</h1>
+        <div style="padding:5px; display:flex; justify-content:end; padding-right: 2rem;">
+            <a class="btn btn-primary" href="{{ route('subjects.create') }}" role="button">Add New Subject</a>
+        </div>
+
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                {{ $message }}
             </div>
-            <div class="form-group mt-3">
-                <label for="user_id">User</label>
-                <select class="form-control" id="user_id" name="user_id" required>
-                    <!-- Options will be populated by JavaScript -->
-                </select>
-            </div>
-            <div class="form-group mt-3">
-                <label for="role">Role</label>
-                <select class="form-control" id="role" name="role" required>
-                    <option value="">Select Role</option>
-                    <option value="admin">Admin</option>
-                    <option value="user">User</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Assign Role</button>
-        </form>
+        @endif
+
+        <table class="table">
+            <thead>
+                <tr>
+                   
+                    <th style="width: 60%;" scope="col">Name</th>
+                    <th style="width: 40%;" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($subjects as $subject)
+                <tr>
+                   
+                    <td style="width: 60%;">{{ $subject->name }}</td>
+                    <td style="display:flex; gap:1rem;">
+                        <a href="{{ route('subjects.show', ['subject' => $subject]) }}" class="btn btn-info btn-sm">Show</a>
+                        <a href="{{ route('subjects.edit', ['subject' => $subject]) }}" class="btn btn-secondary btn-sm">Edit</a>
+                        <form method="POST" action="{{ route('subjects.destroy', ['subject' => $subject]) }}" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
-
-<script>
-document.getElementById('user_type').addEventListener('change', function() {
-    var userType = this.value;
-    var userSelect = document.getElementById('user_id');
-
-    // Clear existing options
-    userSelect.innerHTML = '';
-
-    // Fetch the users based on the selected type
-    fetch(`/get-users?type=${userType}`)
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(user => {
-                var option = document.createElement('option');
-                option.value = user.id;
-                option.text = user.name;
-                userSelect.add(option);
-            });
-        });
-});
-</script>
 @endsection

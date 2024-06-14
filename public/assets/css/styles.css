@@ -177,6 +177,8 @@ nav .fa{
 .accordion{
 	display:flex;
 	flex-direction: row;
+	width: 100%;
+	font-size: 1em;
 }
 .accordion-item{
 	width: 100%;

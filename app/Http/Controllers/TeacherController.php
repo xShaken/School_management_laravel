@@ -61,4 +61,16 @@ class TeacherController extends Controller
        $teacher->delete();
        return redirect(route('teachers.index'))->with('success','product update sucessfully');
    }
+
+    /**
+     * Display the specified teacher.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        return view('teachers.show', compact('teacher'));
+    }
 }

@@ -1,131 +1,106 @@
 @extends('layout')
 
 @section('content')
-
-
-        <div class="container-div">
-            <div class="menu">
-                <nav class="sidebar">
-                    <div class="logo-menu">
-                        <h2 class="logo">Akasha</h2>
-                        <i class='bx bx-menu toggle-btn'></i>
-                    </div>
-
-                    <ul class="nav-list">
-                        <li class="list-item active">
-                            <a href="">
-                                <i class='bx bx-grid-alt'></i>
-                                <span class="link-name">Dashboard</span>
-                            </a>
-                        </li>
-                        <hr>
-                        <div class="men-p">
-                            <p>MENU</p>
-                        </div>
-                        <li class="list-item">
-                            <a href="{{route('teachers.index')}}">
-                                <i class='bx bx-user'></i>
-                                <span class="link-name">Teacher</span>
-                            </a>
-                        </li>
-                        <li class="list-item">
-                            <a href="{{route('students.index')}}">
-                                <i class='bx bx-id-card'></i>
-                                <span class="link-name">Students</span>
-                            </a>
-                        </li>
-
-                        <li class="list-item">
-        <a href="{{ route('subjects.index') }}">
-            <i class='bx bx-certification'></i>
-            <span class="link-name">Subjects</span>
-        </a>
-    </li>
-
-    <li class="list-item">
-                        <a href="{{ route('strands.index') }}" >
-                                <i class='bx bx-receipt'></i>
-                                <span class="link-name">Strands</span>
-                            </a>
-                        </li>
-
-                        <li class="list-item">
-                        <a href="{{ route('sections.index') }}" >
-                                <i class='bx bx-receipt'></i>
-                                <span class="link-name">Sections</span>
-                            </a>
-                        </li>
-
-
-
-                        <li class="list-item">
-                        <a href="{{ route('assign_role.create') }}" >
-                                <i class='bx bx-receipt'></i>
-                                <span class="link-name">Assign Role</span>
-                            </a>
-                        </li>
-
-
-                        <li class="list-item">
-                            <a href="#">
-                                <i class='bx bx-cog'></i>
-                                <span class="link-name">Settings</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+<div class="container-div">
+    <div class="menu">
+        <nav class="sidebar">
+            <div class="logo-menu">
+                <h2 class="logo">Akasha</h2>
+                <i class='bx bx-menu toggle-btn'></i>
             </div>
-            <div class="invi-div">
-            </div>
+            <ul class="nav-list">
+                <li class="list-item active">
+                    <a href="{{ route('dashboard') }}">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="link-name">Dashboard</span>
+                    </a>
+                </li>
+                <hr>
+                <div class="men-p">
+                    <p>MENU</p>
+                </div>
+                <li class="list-item">
+                    <a href="{{ route('teachers.index') }}">
+                        <i class='bx bx-user'></i>
+                        <span class="link-name">Teacher</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="{{ route('students.index') }}">
+                        <i class='bx bx-id-card'></i>
+                        <span class="link-name">Students</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="{{ route('subjects.index') }}">
+                        <i class='bx bx-certification'></i>
+                        <span class="link-name">Subjects</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="{{ route('strands.index') }}">
+                        <i class='bx bx-receipt'></i>
+                        <span class="link-name">Strands</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="{{ route('sections.index') }}">
+                        <i class='bx bx-receipt'></i>
+                        <span class="link-name">Sections</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="{{ route('assign_role.create') }}">
+                        <i class='bx bx-receipt'></i>
+                        <span class="link-name">Assign Role</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#">
+                        <i class='bx bx-cog'></i>
+                        <span class="link-name">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="invi-div"></div>
+
     <div class="st">
         <h1 style="text-align: center;">Students List</h1>
-        <div>
-            <a class="btn btn-primary" href="{{route('students.create')}}" role="button">Create</a>
+        <div style="padding:5px; display:flex; justify-content:end; padding-right: 2rem;">
+            <a class="btn btn-primary" href="{{ route('students.create') }}" role="button">Create</a>
         </div>
-          <table class="table">
+        <table class="table">
             <thead>
                 <tr>
-                  <th scope="col">Student_id</th>
-                  <th scope="col">Name</th>
-                  <!-- <th scope="col">Age</th>
-                  <th scope="col">Birth_Date</th>
-                  <th scope="col">Phone</th> -->
-                  <th scope="col">Email</th>
-                  <!-- <th scope="col">Father</th>
-                  <th scope="col">Mother</th>
-                  <th scope="col">Father_Num</th> -->
-                  <th scope="col">Address</th>
-                  <!-- <th scope="col">CGPA</th> -->
-                   <th>Action</th>
+                    <th style="width: 20%;" scope="col">Student ID</th>
+                    <th style="width: 20%;" scope="col">Name</th>
+                    <th style="width: 20%;" scope="col">Email</th>
+                    <th style="width: 20%;" scope="col">Address</th>
+                    <th style="width: 20%;" scope="col">Action</th>
                 </tr>
-              </thead>
-              @foreach($students as $student)
-                <tbody>  
-                    <tr>
-                      <td>{{$student->Student_id}}</td>
-                      <td>{{$student->Name}}</td>
-                      <!-- <td>{{$student->Age}}</td>
-                      <td>{{$student->Birth_Date}}</td>
-                      <td>{{$student->Phone}}</td> -->
-                      <td>{{$student->Email}}</td>
-                      <!-- <td>{{$student->Father}}</td>
-                      <td>{{$student->Mother}}</td>
-                      <td>{{$student->Father_Num}}</td> -->
-                      <td>{{$student->Address}}</td>
-                      <!-- <td>{{$student->CGPA}}</td> -->
-                      <td>
-                        <a href="{{route('students.edit',['student'=>$student])}}">Edit</a>
-                        <form method="POST" action="{{route('students.destroy',['student'=>$student])}}">
+            </thead>
+            <tbody>
+                @foreach($students as $student)
+                <tr>
+                    <td style="width: 20%;">{{ $student->Student_id }}</td>
+                    <td style="width: 20%;">{{ $student->Name }}</td>
+                    <td style="width: 20%;">{{ $student->Email }}</td>
+                    <td style="width: 20%;">{{ $student->Address }}</td>
+                    <td style="display:flex; gap:1rem;">
+                        <a href="{{ route('students.show', ['student' => $student]) }}" class="btn btn-info btn-sm">Show</a>
+                        <a href="{{ route('students.edit', ['student' => $student]) }}" class="btn btn-secondary btn-sm">Edit</a>
+                        <form method="POST" action="{{ route('students.destroy', ['student' => $student]) }}" style="display:inline;">
                             @csrf
-                            @method('delete')
-                            <input type="submit" value="Delete">
-                          </form>
-                      </td>
-                    </tr>
-                </tbody>
-              @endforeach
-          </table>
-         
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
-   
+</div>
 @endsection

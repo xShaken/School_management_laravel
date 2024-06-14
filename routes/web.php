@@ -10,6 +10,8 @@ use App\Http\Controllers\StrandController;
 use App\Http\Controllers\SectionController;
 
 
+
+Route::resource('subjects', SubjectController::class);
 Route::resource('strands', StrandController::class);
 Route::resource('sections', SectionController::class);
 

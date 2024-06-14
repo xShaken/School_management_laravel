@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
 <div class="container-div">
     <div class="menu">
         <nav class="sidebar">
@@ -65,56 +66,37 @@
         </nav>
     </div>
     <div class="invi-div"></div>
-    <div class="container mt-5">
-        <h2>Assign Roles</h2>
-        <form action="{{ route('assign_role.store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="user_type">User Type</label>
-                <select class="form-control" id="user_type" name="user_type" required>
-                    <option value="">Select User Type</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="student">Student</option>
-                </select>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Teacher Details</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>ID</th>
+                            <td>{{ $teacher->Teacher_id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ $teacher->Name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ $teacher->Email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{ $teacher->Address }}</td>
+                        </tr>
+                    </table>
+                    <a href="{{ route('teachers.index') }}" class="btn btn-secondary">Back</a>
+                </div>
             </div>
-            <div class="form-group mt-3">
-                <label for="user_id">User</label>
-                <select class="form-control" id="user_id" name="user_id" required>
-                    <!-- Options will be populated by JavaScript -->
-                </select>
-            </div>
-            <div class="form-group mt-3">
-                <label for="role">Role</label>
-                <select class="form-control" id="role" name="role" required>
-                    <option value="">Select Role</option>
-                    <option value="admin">Admin</option>
-                    <option value="user">User</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Assign Role</button>
-        </form>
+        </div>
     </div>
 </div>
-
-<script>
-document.getElementById('user_type').addEventListener('change', function() {
-    var userType = this.value;
-    var userSelect = document.getElementById('user_id');
-
-    // Clear existing options
-    userSelect.innerHTML = '';
-
-    // Fetch the users based on the selected type
-    fetch(`/get-users?type=${userType}`)
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(user => {
-                var option = document.createElement('option');
-                option.value = user.id;
-                option.text = user.name;
-                userSelect.add(option);
-            });
-        });
-});
-</script>
+</div>
 @endsection

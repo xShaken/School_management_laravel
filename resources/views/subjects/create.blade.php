@@ -77,39 +77,26 @@
             </div>
             <div class="invi-div">
             </div>
+<div class="container">
+    <h1>Create New Subject</h1>
 
-    <h1>Edit Section</h1>
-
-    <form action="{{ route('sections.update', $section->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" value="{{ old('name', $section->name) }}" required>
-            @error('name')
-                <div>{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div>
-            <label for="strand_id">Strand:</label>
-            <select name="strand_id" id="strand_id" required>
-                @foreach($strands as $strand)
-                    <option value="{{ $strand->id }}" {{ $section->strand_id == $strand->id ? 'selected' : '' }}>
-                        {{ $strand->name }}
-                    </option>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
                 @endforeach
-            </select>
-            @error('strand_id')
-                <div>{{ $message }}</div>
-            @enderror
+            </ul>
         </div>
+    @endif
 
-        <div>
-            <button type="submit">Update Section</button>
+    <form action="{{ route('subjects.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}">
         </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
-    <a href="{{ route('sections.index') }}">Back to Sections</a>
+</div>
 @endsection
