@@ -2,265 +2,201 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akasha Senior High</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=News+Cycle:wght@400;700&family=
-Passion+One:wght@400;700;900&family=Rubik+Scribble&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="{{ asset('assets/css/link1.css') }}">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-  <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
   <header>
-    <div style=" padding:5px 2rem;margin-top:3.5px;">
-      <a style="border: 1px solid orange; padding:5px 2rem; text-decoration:none; color: orange;" href="{{ asset('login') }}">Login</a>
+    <nav>
+      
+      <div class="logo-div">
+      <a href="{{ asset('SampleBootstrap') }}"><img width="60" src="{{ asset('assets\img\akasha.png') }}"></a>
+        <p>AKASHA</p>
+      </div>
+      
+      <div class="links-div" id="nav-links">
+        <a href="# " class="a active" onclick="myFunction()">Home</a>
+        <a href="#sec3" class="a" onclick="myFunction()"> Strands</a>
+        <a href="#sec5" class="a" onclick="myFunction()">About us</a>
+      </div>
+      <div class="menu-icon-div" onclick="myFunction()">
+        <img class="menu-icon" src="./Assets/menu-fill.png" alt="" />
+      </div>
+      <div style="display:flex; justify-content: center; align-items: center;">
+      <a style="border: 1px solid orange; padding:5px 2rem; text-decoration:none; color: orange; " href="{{ asset('login') }}">Login</a>
     </div>
+    </nav>
   </header>
 
-  <section class="header">
-    <nav>
-      <a href="{{ asset('samplebootstrap') }}"><img src="{{ asset('assets\img\akasha.png') }}"></a>
-      <div class="nav-links" id="navLinks">
 
-        <i class="fa fa-times" onclick="hideMenu()"></i>
+  <main>
+    <div class="main-divl">
+      <h1>
+        <span class="span1">AKASHA SENIOR HIGH SCHOOL</span> YOUR GATEWAY TO
+        <span class="span2">ACADEMIC EXCELLENCE.</span>
+      </h1>
 
-        <ul>
-          <li><a href="">HOME</a></li>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">COURSE</a></li>
-          <li><a href="">BLOG</a></li>
-          <li><a href="">CONTACT</a></li>
-        </ul>
+      <div class="btn-div">
+        <a href="#">Get started</a>
+        <img src="{{ asset('assets\img\right-arrow.png') }}">
       </div>
-      <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-    <div class="text-box">
-
-      <h1>AKASHA SHS</h1>
-      <p>WELCOME TO THE AKASHA SENIOR HIGH SCHOOL, YOUR GATEWAY TO ACADEMIC EXCELLENCE AND STUDENT SUCCESS. </p>
-
-      <a href="" class="hero-btn">Click for More</a>
     </div>
-  </section>
-
-
-  <!-----------Course--------------->
-
-  <section class="course">
-    <h1>Strands We Offer</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-
-    <div class="row">
-
-      <div class="course-col">
-        <h3><a href="{{ asset('stem') }}"> STEM (Science Technology Engineering. Mathematics)</h3> </a>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Aperiam, sunt molestiae vitae consequuntur enim dolor optio
-          laborum vel! Amet totam assumenda iure ea incidunt ducimus quam aperiam
-          cupiditate illo nobis.</p>
-      </div>
-
-      <div class="course-col">
-        <h3><a href="{{ asset('abm') }}">ABM (Accountancy Business Management)</h3></a>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Aperiam, sunt molestiae vitae consequuntur enim dolor optio
-          laborum vel! Amet totam assumenda iure ea incidunt ducimus quam aperiam
-          cupiditate illo nobis.</p>
-      </div>
-
-      <div class="course-col">
-        <h3><a href="{{ asset('tvl') }}">TVL (Technical Vocational Livelihood)</h3></a>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Aperiam, sunt molestiae vitae consequuntur enim dolor optio
-          laborum vel! Amet totam assumenda iure ea incidunt ducimus quam aperiam
-          cupiditate illo nobis.</p>
-      </div>
-
-      <div class="course-col">
-        <h3><a href="{{ asset('humss') }}">HUMSS (Humanities Social Sciences)</h3></a>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Aperiam, sunt molestiae vitae consequuntur enim dolor optio
-          laborum vel! Amet totam assumenda iure ea incidunt ducimus quam aperiam
-          cupiditate illo nobis.</p>
-      </div>
-
-      <div class="course-col">
-        <h3><a href="{{ asset('gas') }}">GAS (General Academic Strand)</h3></a>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Aperiam, sunt molestiae vitae consequuntur enim dolor optio
-          laborum vel! Amet totam assumenda iure ea incidunt ducimus quam aperiam
-          cupiditate illo nobis.</p>
-      </div>
-
+    <div class="main-divr">
+    <img width="600" src="{{ asset('assets\img\front.png') }}">
     </div>
+  </main>
 
-
-  </section>
-
-  <section class="hero">
-    <div class="heading">
+  <br>
+  <br>
+  <br>
+  <br>
+  <section class="section5">
+    <div class="section5-divl">
+    <img src="{{ asset('assets\img\about.jpg') }}">
+    </div>
+    <div class="section5-divr" id="sec5">
       <h1>About Us</h1>
+      <p>
+        We are committed to providing a nurturing and stimulating learning environment where students can thrive academically, 
+        personally, and socially. Our school is dedicated to empowering students to reach their full potential and achieve their goals.
+      </p>
+    
     </div>
-    <div class="container her">
+  </section>
 
-      <div class="content-hero1">
-        <div class="hero-content">
-          <h2>About</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum sequi molestias, perferendis
-            distinctio fuga </p>
-          <button class="cta-button">Learn More</button>
-        </div>
-        <div class="hero-image">
-          <img src="{{ asset('assets\img\hs (3).png') }}">
-        </div>
+  <section class="section2">
+    <div class="section2-div1">
+      <h1>Vision, Mission, and Values</h1>
+
+    </div>
+    <div class="section2-div2">
+      <div class="div-item">
+        <h3>Vision</h3>
+        <p>
+          To inspire academic excellence and nurture future leaders, Akasha Senior High School is dedicated to providing 
+          a supportive environment where students can thrive academically and personally. Through innovative teaching methods 
+          and personalized attention, we aim to equip students with the skills, knowledge, and values they need to succeed 
+          in their chosen paths and make positive contributions to society.
+        </p>
       </div>
-      <div class="content-hero2">
-
-        <div class="conts">
-
-          <h1>Vision, Mission, Values </h1>
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Vision
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Mission
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Values
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="separation-line"></div>
+      <div class="div-item">
+        <h3>Mission</h3>
+        <p>
+          To provide a supportive and challenging environment where every student can achieve their highest potential, 
+          Akasha Senior High School is committed to fostering a culture of academic excellence, personal growth,
+           and social responsibility. Through innovative teaching practices, individualized support, and meaningful learning experiences, 
+          we strive to empower students to become critical thinkers, lifelong learners, and compassionate leaders.
+        </p>
+      </div>
+      <div class="separation-line"></div>
+      <div class="div-item">
+        <h3>Values</h3>
+        <p>
+          <b> Excellence:</b> Striving for the highest standards in education.
+          <b>Integrity:</b> Upholding honesty and strong moral principles.
+          <b> Inclusivity:</b> Embracing diversity and fostering a sense of belonging.
+          <b> Respect: </b>Valuing each individual's contributions and potential.
+          <b> Growth:</b> Encouraging continuous personal and academic development.
       </div>
     </div>
+  </section>
+
+  <section class="section3" id="sec3">
+    <div class="section3-div1">
+      <h1>Strands We Offer:</h1>
+     
+    </div>
+    <div class="section3-div2">
+      <a href="{{ asset('stem') }}" style="text-decoration: none; color: black;">
+      <div class="div-item">
+      <img src="{{ asset('assets\img\f1.png') }}">
+        <p>STEM</p>
+        <p>(Science Technology Engineering Mathematics)</p>
+      </div>
+    </a>
+
+    <a href="{{ asset('abm') }}" style="text-decoration: none; color: black;">
+      <div class="div-item">
+      <img src="{{ asset('assets\img\f2.png') }}">
+        <p>ABM</p>
+        <p>(Accountancy Business Management)</p>
+      </div>
+    </a>
+
+      <a href="{{ asset('humss') }}" style="text-decoration: none; color: black;">
+      <div class="div-item">
+      <img src="{{ asset('assets\img\f3.png') }}">
+        <p>HUMSS</p>
+        <p>(Humanities Social Sciences)</p>
+      </div>
+      </a>
+
+      <a href="{{ asset('tvl') }}" style="text-decoration: none; color: black;">
+      <div class="div-item">
+      <img src="{{ asset('assets\img\f4.png') }}">
+        <p>TVL</p>
+        <p>(Technical Vocational Livelihood)</p>
+      </div>
+      </a>
+
+      <a href="{{ asset('gas') }}" style="text-decoration: none; color: black;">
+      <div class="div-item">
+      <img src="{{ asset('assets\img\f5.png') }}">
+        <p>GAS</p>
+        <p>(General Academic Strand)</p>
+      </div>
+      </a>
+   
+    </div>
+  </section>
+
+ 
+
+  <section class="footer">
+    <div class="social">
+       <img src="{{ asset('assets\img\twiter.png') }}">
+       <img src="{{ asset('assets\img\facebook.png') }}">
+       <img src="{{ asset('assets\img\linkedin.png') }}">
+    </div>
+    <div class="links">
+      <a href="">Home</a>
+      <a href="#sec3">Strands</a>
+     
+      <a href="#sec5">About us</a>
+    </div>
+    <div class="copyright">
+      <p><a href="">Terms of use</a> | <a href="">Privacy policy</a></p>
+      <p>©2024 Akasha. All rights reserved</p>
     </div>
   </section>
 
 
-  <!-----Campus----->
-  <div class="container campus">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{{ asset('assets\img\hs (3).png') }}" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>First slide label</h2>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="{{ asset('assets\img\hs (3).png') }}" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Second slide label</h2>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="{{ asset('assets\img\hs (3).png') }}" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Third slide label</h2>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-  </div>
-  </div>
-
-  <div class="footer">
-    <div class="footerContainer">
-
-      <div class="socialIcons">
-        <a href><i class="fa-brands fa-facebook"></i></a>
-        <a href><i class="fa-brands fa-instagram"></i></a>
-        <a href><i class="fa-brands fa-twitter"></i></a>
-        <a href><i class="fa-brands fa-google-plus"></i></a>
-        <a href><i class="fa-brands fa-youtube"></i></a>
-
-      </div>
-    </div>
-    <div class="footerNav">
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">News</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Contact Us</a></li>
-        <li><a href="">Our Team</a></li>
-      </ul>
-      <div class="footerBottom">
-        <p>Copyright &copy;2022; Designed by <span class="designer">Akasha </span></p>
-      </div>
-    </div>
-    <!----JavaScript for Toggle Menu---->
-
-    <script>
-      const navLinks = document.getElementById("navLinks");
-
-      function showMenu() {
-        navLinks.style.right = "0";
+  <script>
+    function myFunction() {
+      var x = document.getElementById("nav-links");
+      if (x.className === "links-div") {
+        x.className += " responsive";
+      } else {
+        x.className = "links-div";
       }
+    }
 
-      function hideMenu() {
-        navLinks.style.right = "-200px";
-      }
-    </script>
-    <script src="https://kit.fontawesome.com/f30525b22c.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('assets/js/js.js') }}"></script>
-
+    var header = document.getElementById("nav-links");
+    var btns = header.getElementsByClassName("a");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
 </body>
 
 </html>

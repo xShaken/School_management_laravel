@@ -169,21 +169,40 @@ nav .fa{
 	display: flex;
 	flex-direction: row;
 }
-.conts{
-	width: 1000px;
-	
-	
-}
-.accordion{
-	display:flex;
-	flex-direction: row;
+
+
+/* Base styles */
+.conts {
+	max-width: 1000px; /* Use max-width for responsiveness */
+	width: 100%; /* Make width responsive */
+	margin: 0 auto; /* Center align if the screen is wider than 1000px */
+  }
+  
+  .accordion {
+	background-color: #892200; /* Dark green background */
+	color: white; /* White text */
+	cursor: pointer;
+	padding: 18px;
 	width: 100%;
-	font-size: 1em;
-}
-.accordion-item{
-	width: 100%;
-	
-}
+	border: none;
+	text-align: center;
+	outline: none;
+	font-size: 30px;
+	transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+	background-color: #a2310c; /* Lighter green on hover */
+  }
+  
+  .panel {
+	padding: 0 18px;
+	display: none;
+	background-color: white;
+	overflow: hidden;
+  }
+
+
 
 .hero-content{
 	flex:1;
@@ -729,7 +748,7 @@ header{
 	justify-content: center;
 	align-items: center;
 	padding: 5rem;
-	border: 1px solid black ;
+	
 }
 
 .div-stem ul li{
@@ -852,6 +871,38 @@ ul{
 }
 
 
+
+
+
+
+
+.div-tvl{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5rem;
+	border: 1px solid black ;
+}
+
+.div-tvl ul li{
+	list-style: none;
+}
+
+ul{
+	padding: 1rem;
+}
+
+.tvl-div{
+	border-radius: 20px;
+	padding: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tvl-div ul li p{
+	font-size: large;
+	font-weight: bold;
+}
 
 
 
